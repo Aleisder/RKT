@@ -87,7 +87,7 @@ namespace MaiProject.Repository
             using var connection = new SqlConnection(connectionString);
             connection.Open();
 
-            string query = "SELECT * FROM [Администраторы]";
+            string query = "SELECT [Администраторы].[ID_Кадровика],\r\n       [Логин],\r\n\t   [Пароль],\r\n\t   [Администраторы].[ID_Сотрудника],\r\n\t   [Фамилия],\r\n\t   [Имя],\r\n\t   [Отчество],\r\n\t   [Адрес_регистрации].[ID_Адреса_регистрации],\r\n\t   [Адрес_регистрации].[Регион],\r\n\t   [Регион].[Название],\r\n\t   [Адрес_регистрации].[Пункт],\r\n\t   [Адрес_регистрации].[Улица],\r\n\t   [Адрес_регистрации].[Дом],\r\n\t   [Адрес_регистрации].[Корпус],\r\n\t   [Адрес_регистрации].[Строение],\r\n\t   [Адрес_регистрации].[Квартира],\r\n\t   [Сотрудники].[Адрес_проживания],\r\n\t   [Адрес_проживания].[Регион],\r\n\t   [Регион].[Название],\r\n\t   [Адрес_проживания].[Пункт],\r\n\t   [Адрес_регистрации].[Улица],\r\n\t   [Адрес_регистрации].[Дом],\r\n\t   [Адрес_регистрации].[Корпус],\r\n\t   [Адрес_регистрации].[Строение],\r\n\t   [Адрес_регистрации].[Квартира],\r\n\t   [Должность],\r\n\t   [Должности].[Название_должности],\r\n\t   [СНИЛС],\r\n\t   [Сотрудники].[ИНН],\r\n\t   [Дата_рождения],\r\n\t   [Номер_телефона],\r\n\t   [Сотрудники].[Гражданство],\r\n\t   [Гражданство].[Гражданство] AS [Название_гражданства],\r\n\t   [Сотрудники].[Иностранный_язык],\r\n\t   [Иностранный_язык].[Наименование_языка],\r\n\t   [Иностранный_язык].[Уровень_знания],\r\n\t   [Сотрудники].[Образование],\r\n\t   [Образование].[Степень_образования],\r\n       [Образование].[Наименование_учебного_заведения],\r\n       [Образование].[Серия_диплома],\r\n       [Образование].[Номер_диплома],\r\n       [Образование].[Квалификация],\r\n       [Образование].[Направление],\r\n\t   [Семейное_положение],\r\n\t   [Электронная_почта],\r\n\t   [Сотрудники].[Паспорт],\r\n\t   [Паспорт].[Серия_паспорта],\r\n       [Паспорт].[Номер_паспорта],\r\n       [Паспорт].[Кем_выдан],\r\n       [Паспорт].[Дата_выдачи],\r\n       [Паспорт].[Код_подразделения],\r\n       [Паспорт].[Пол],\r\n\t   [Серия_ТК],\r\n\t   [Номер_ТК],\r\n\t   [Сотрудники].[Воинский_учет],\r\n\t   [Воинский_учет].[Номер_военного_билета],\r\n       [Воинский_учет].[Категория_запаса],\r\n       [Воинский_учет].[Воинское_звание],\r\n       [Воинский_учет].[Состав],\r\n       [Воинский_учет].[ВУС],\r\n       [Воинский_учет].[Категория_годности],\r\n       [Воинский_учет].[Наименование_ВК],\r\n       [Воинский_учет].[Состояние_на_ВУ],\r\n       [Воинский_учет].[Отментка_о_снятии],\r\n\t   [Номер_мед_книжки],\r\n\t   [Сотрудники].[Расчетный_счет],\r\n\t   [Расчетный_счет].[Лицевой_счет],\r\n       [Расчетный_счет].[Расчетный_счет],\r\n       [Расчетный_счет].[Наименование_банка],\r\n       [Расчетный_счет].[БИК],\r\n\t   [Расчетный_счет].[ИНН],\r\n       [Расчетный_счет].[КПП],\r\n       [Расчетный_счет].[Номер_БК]\r\n  FROM [Администраторы]\r\n  JOIN [Сотрудники] ON [Администраторы].[ID_Сотрудника] = [Сотрудники].[ID_Сотрудника]\r\n  JOIN [Адрес_регистрации] ON [Сотрудники].[Адрес_регистрации] = [Адрес_регистрации].[ID_Адреса_регистрации]\r\n  JOIN [Адрес_проживания] ON [Адрес_проживания].[ID_Адреса] = [Сотрудники].[Адрес_проживания]\r\n  JOIN [Регион] ON [Адрес_регистрации].[ID_Адреса_регистрации] = [Регион].ID_Региона\r\n  JOIN [Должности] ON [Должности].[ID_Должности] = [Сотрудники].[Должность]\r\n  JOIN [Гражданство] ON [Гражданство].[ID_гражданства] = [Сотрудники].[Гражданство]\r\n  JOIN [Иностранный_язык] ON [Иностранный_язык].[ID_языка] = [Сотрудники].[Иностранный_язык]\r\n  JOIN [Образование] ON [Образование].[ID_образования] = [Сотрудники].[Образование]\r\n  JOIN [Паспорт] ON [Паспорт].[ID_Паспорта] = [Сотрудники].[Паспорт]\r\n  JOIN [Воинский_учет] ON [Воинский_учет].[ID_Военного_билета] = [Сотрудники].[Воинский_учет]\r\n  JOIN [Расчетный_счет] ON [Расчетный_счет].[ID_Расчетного_счета] = [Сотрудники].[Расчетный_счет];";
 
             var command = new SqlCommand(query, connection);
             using var reader = command.ExecuteReader();
@@ -109,98 +109,105 @@ namespace MaiProject.Repository
                 string registrationRegionName = reader.GetString(9);
 
                 var region = new Region(registrationRegionId, registrationRegionName);
-                string state = reader.GetString(10);
+                string station = reader.GetString(10);
                 string street = reader.GetString(11);
-                string building = reader.GetString(12);
-                string housing = reader.GetString(13);
-                string apartment = reader.GetString(14);
+                string house = reader.GetString(12);
+                string building = reader.GetString(13);
+                int structure = reader.GetInt32(14);
+                int apartment = reader.GetInt32(15);
 
-                var registration = new Registration(registrationId, region, state, street, building, housing, apartment);
+                var registration = new Registration(registrationId, region, station, street, house, building, structure, apartment);
 
-                int addressId = reader.GetInt32(15);
-                int addressRegionId = reader.GetInt32(16);
-                string addressRegionName = reader.GetString(17);
+                int addressId = reader.GetInt32(16);
+                int addressRegionId = reader.GetInt32(17);
+                string addressRegionName = reader.GetString(18);
 
                 region = new Region(addressRegionId, addressRegionName);
-                state = reader.GetString(18);
-                street = reader.GetString(19);
-                building = reader.GetString(20);
-                housing = reader.GetString(21);
-                apartment = reader.GetString(22);
+                station = reader.GetString(19);
+                street = reader.GetString(20);
+                house = reader.GetString(21);
+                building = reader.GetString(22);
+                structure = reader.GetInt32(23);
+                apartment = reader.GetInt32(24);
 
-                var address = new Address(addressId, region, state, street, building, housing, apartment);
+                var address = new Address(addressId, region, station, street, house, building, structure, apartment);
 
-                int positionId = reader.GetInt32(23);
-                string positionName = reader.GetString(24);
+                int positionId = reader.GetInt32(25);
+                string positionName = reader.GetString(26);
 
                 var position = new Position(positionId, positionName);
 
-                string snils = reader.GetString(25);
-                string inn = reader.GetString(26);
-                DateTime dateOfBirth = reader.GetDateTime(27);
-                string phone = reader.GetString(28);
+                string snils = reader.GetString(27);
+                string inn = reader.GetString(28);
+                DateOnly dateOfBirth = DateOnly.FromDateTime(reader.GetDateTime(29));
+                string phone = reader.GetString(30);
 
-                int citizenshipId = reader.GetInt32(29);
-                string citizenshipName = reader.GetString(30);
+                int citizenshipId = reader.GetInt32(31);
+                string citizenshipName = reader.GetString(32);
 
                 var citizenship = new Citizenship(citizenshipId, citizenshipName);
 
-                int languageId = reader.GetInt32(31);
-                string languageName = reader.GetString(32);
-                string languageLevel = reader.GetString(33);
+                int languageId = reader.GetInt32(33);
+                string languageName = reader.GetString(34);
+                string languageLevel = reader.GetString(35);
 
                 var foreignLanguage = new ForeignLanguage(languageId, languageName, languageName);
 
-                int educationId = reader.GetInt32(34);
-                string degree = reader.GetString(35);
-                string institution = reader.GetString(35);
-                string diplomaSeries = reader.GetString(36);
-                string diplomaNumber = reader.GetString(37);
-                string qualification = reader.GetString(38);
-                string direction = reader.GetString(39);
+                int educationId = reader.GetInt32(36);
+                string degree = reader.GetString(37);
+                string institution = reader.GetString(38);
+                string diplomaSeries = reader.GetString(39);
+                string diplomaNumber = reader.GetString(40);
+                string qualification = reader.GetString(41);
+                string direction = reader.GetString(42);
 
                 var education = new Education(educationId, degree, institution, diplomaSeries, diplomaNumber, qualification, direction);
 
-                string familyStatus = reader.GetString(40);
-                string email = reader.GetString(41);
+                string familyStatus = reader.GetString(43);
+                string email = reader.GetString(44);
 
-                int passportId = reader.GetInt32(42);
-                string passportSeries = reader.GetString(43);
-                string passportNumber = reader.GetString(44);
-                string passportIssuedBy = reader.GetString(45);
-                DateOnly passportIssuedDate = reader.GetDateTime(46);
-                string passportCode = reader.GetString(47);
-                string passportGender = reader.GetString(48);
-
-                string employmentHistorySeries = reader.GetString(49);
-                string employmentHistoryNumber = reader.GetString(50);
-
-                int militaryId = reader.GetInt32(51);
-                string militaryNumber = reader.GetInt32(52);
-                string militaryCategory = reader.GetString(53);
-                string militaryRank = reader.GetString(54);
-
-                var militaryRegistration = new MilitaryRegistration(militaryId, militaryNumber, militaryCategory, militaryCategory);
-
-                string medicalCardNumber = reader.GetString(55);
-
-                int paymentId = reader.GetInt32(56);
-                string paymentPersonalAccount = reader.GetString(57);
-                string paymentPayment = reader.GetString(58);
-                string paymentBank = reader.GetString(59);
-                string paymentBik = reader.GetString(60);
-                string paymentInn = reader.GetString(61);
-                string paymentKpp = reader.GetString(62);
-                string paymentCardNumber = reader.GetString(63);
-
-                var payment = new PaymentAccount(paymentId, paymentPersonalAccount, paymentPayment, paymentBank, paymentBik, paymentInn, paymentKpp, paymentCardNumber);
+                int passportId = reader.GetInt32(45);
+                int passportSeries = reader.GetInt32(46);
+                int passportNumber = reader.GetInt32(47);
+                string passportIssuedBy = reader.GetString(48);
+                DateOnly passportIssuedDate = DateOnly.FromDateTime(reader.GetDateTime(49));
+                string passportCode = reader.GetString(50);
+                bool passportGender = reader.GetBoolean(51);
 
                 var passport = new Passport(passportId, passportSeries, passportNumber, passportIssuedBy, passportIssuedDate, passportCode, passportGender);
 
-                var employee = new Employee(employeeId, lastName, firstName, middleName, registration, null, position, snils, inn, dateOfBirth, phone, citizenship, foreignLanguage, education, familyStatus, email, passport, employmentHistorySeries, employmentHistoryNumber, militaryRegistration, medicalCardNumber, paymentAccount);
+                string employmentHistorySeries = reader.GetString(52);
+                string employmentHistoryNumber = reader.GetString(53);
+
+                int militaryId = reader.GetInt32(54);
+                string militaryNumber = reader.GetString(55);
+                int militaryReserveCategory = reader.GetInt32(56);
+                string militaryRank = reader.GetString(57);
+                string team = reader.GetString(58);
+                string militarySpecialization = reader.GetString(59);
+                string suitability = reader.GetString(60);
+                string commissariat = reader.GetString(61);
+                string militaryState = reader.GetString(62);
+                string fired = reader.GetString(63);
+
+                var militaryRegistration = new MilitaryRegistration(militaryId, militaryNumber, militaryReserveCategory, militaryRank, team, militarySpecialization, suitability, commissariat, militaryState, fired);
+
+                string medicalCardNumber = reader.GetString(64);
+
+                int paymentId = reader.GetInt32(65);
+                string paymentPersonalAccount = reader.GetString(66);
+                string paymentPayment = reader.GetString(67);
+                string paymentBank = reader.GetString(68);
+                int paymentBik = reader.GetInt32(69);
+                int paymentInn = reader.GetInt32(70);
+                int paymentKpp = reader.GetInt32(71);
+                string paymentCardNumber = reader.GetString(72);
+
+                var payment = new Payment(paymentId, paymentPersonalAccount, paymentPayment, paymentBank, paymentBik, paymentInn, paymentKpp, paymentCardNumber);
+
+                var employee = new Employee(employeeId, lastName, firstName, middleName, registration, address, position, snils, inn, dateOfBirth, phone, citizenship, foreignLanguage, education, familyStatus, email, passport, employmentHistorySeries, employmentHistoryNumber, militaryRegistration, medicalCardNumber, payment);
                 var user = new User(userId, login, password, employee);
                 users.Add(user);
-
             }
             reader.Close();
             connection.Close();
@@ -208,7 +215,7 @@ namespace MaiProject.Repository
             return users;
         }
 
-        public override User GetById(int id) => 
+        public override User GetById(int id) =>
             GetAll()
             .Where(user => user.Id == id)
             .First();

@@ -4,29 +4,29 @@ using System.Collections.Generic;
 
 namespace MaiProject.Repository
 {
-    public class PaymantAccountRepository : Repository<PaymentAccount>
+    public class PaymantAccountRepository : Repository<Payment>
     {
-        public override int Add(PaymentAccount item)
+        public override int Add(Payment item)
         {
             throw new System.NotImplementedException();
         }
 
-        public override void Delete(PaymentAccount item)
+        public override void Delete(Payment item)
         {
             throw new System.NotImplementedException();
         }
 
-        public override List<PaymentAccount> GetAll()
+        public override List<Payment> GetAll()
         {
             throw new System.NotImplementedException();
         }
 
-        public override PaymentAccount GetById(int id)
+        public override Payment GetById(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public override int Update(PaymentAccount item)
+        public override int Update(Payment item)
         {
             throw new System.NotImplementedException();
         }

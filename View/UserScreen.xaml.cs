@@ -79,9 +79,9 @@ namespace DemoExam.View
         {
             var role = (Position)RoleComboBox.SelectedItem;
 
-            var user = new User();
+           
 
-            userService.Add(user);
+            //userService.Add(user);
             CloseAddUserWindow();
             ClearTextBoxes();
         }

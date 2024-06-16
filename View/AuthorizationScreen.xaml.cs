@@ -11,6 +11,8 @@ namespace DemoExam
  
         private void EnterButtonClick(object sender, RoutedEventArgs e)
         {
+            var users = userRepository.GetAll();
+
             string login = loginField.Text;
             string password = passwordField.Password;
 

@@ -14,7 +14,5 @@
             Password = password;
             Employee = employee;
         }
-
-        public User() { }
     }
 }

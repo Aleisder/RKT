@@ -9,8 +9,8 @@
         WindowStartupLocation="CenterScreen"
         Title="RKT"
         Icon="/Images/policeman.png"
-        Height="800"
-        Width="1240">
+        Height="1000"
+        Width="1640">
 
     <Window.Resources>
 
@@ -183,7 +183,7 @@
 
     </Window.Resources>
 
-    <Grid Background="#FF27295A">
+    <Grid Background="#FFCAE0FF">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="3.9*" />
@@ -285,7 +285,7 @@
                                                         ElementStyle="{StaticResource CheckBoxStyle}">
                                     <DataGridCheckBoxColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <CheckBox Style="{StaticResource CheckBoxStyle}"/>
+                                            <CheckBox Style="{StaticResource CheckBoxStyle}" />
                                         </DataTemplate>
                                     </DataGridCheckBoxColumn.HeaderTemplate>
                                 </DataGridCheckBoxColumn>
@@ -523,8 +523,8 @@
               Visibility="Collapsed"
               Grid.RowSpan="2">
 
-            <Grid Width="500"
-                  Height="500">
+            <Grid Width="1400"
+                  Height="700">
 
                 <Border Padding="40"
                         Background="White"
@@ -539,72 +539,346 @@
                                 Click="CloseAddUserWindowClick" />
 
                         <TextBlock Text="Заполните данные"
-                                   FontSize="18"
-                                   FontWeight="SemiBold"
+                                   FontSize="30"
+                                   FontWeight="Bold"
+                                   Margin="0 0 0 30"
                                    HorizontalAlignment="Center" />
 
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition Width="3*" />
-                            </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal">
 
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="180" />
+                                </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Фамилия:"
-                                       Grid.Row="0"
-                                       Grid.Column="0"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
 
-                            <TextBox x:Name="SurnameTextxBox"
-                                     Grid.Column="1"
-                                     Grid.Row="0"
-                                     Style="{StaticResource InputUserInfoTextBox}" />
+                                <TextBlock Text="Личные данные:"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           Grid.Row="0"
+                                           Grid.ColumnSpan="2" />
 
-                            <TextBlock Text="Имя:"
-                                       Grid.Row="1"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
+                                <TextBlock Text="Фамилия:"
+                                           Grid.Row="1"
+                                           Grid.Column="0"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
 
-                            <TextBox x:Name="NameTextBox"
-                                     Grid.Column="1"
-                                     Grid.Row="1"
-                                     Style="{StaticResource InputUserInfoTextBox}" />
+                                <TextBox x:Name="SurnameTextxBox"
+                                         Grid.Column="1"
+                                         Grid.Row="1"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
 
-                            <TextBlock Text="Логин:"
-                                       Grid.Row="2"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
+                                <TextBlock Text="Имя:"
+                                           Grid.Row="2"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
 
-                            <TextBox x:Name="LoginTextBox"
-                                     Grid.Column="1"
-                                     Grid.Row="2"
-                                     Style="{StaticResource InputUserInfoTextBox}" />
+                                <TextBox x:Name="NameTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="2"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
 
-                            <TextBlock Text="Пароль:"
-                                       Grid.Row="3"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
+                                <TextBlock Text="Логин:"
+                                           Grid.Row="3"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
 
-                            <TextBox x:Name="PasswordTextBox"
-                                     Grid.Column="1"
-                                     Grid.Row="3"
-                                     Style="{StaticResource InputUserInfoTextBox}" />
+                                <TextBox x:Name="LoginTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="3"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
 
-                            <TextBlock Text="Должность:"
-                                       Grid.Row="4"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
+                                <TextBlock Text="Пароль:"
+                                           Grid.Row="4"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
 
-                            <ComboBox x:Name="RoleComboBox"
-                                      Grid.Column="1"
-                                      Margin="10"
-                                      Grid.Row="4">
-                            </ComboBox>
+                                <TextBox x:Name="PasswordTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="4"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
 
-                        </Grid>
+                                <TextBlock Text="Должность:"
+                                           Grid.Row="5"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <ComboBox x:Name="RoleComboBox"
+                                          Grid.Column="1"
+                                          Margin="10"
+                                          Grid.Row="5">
+                                </ComboBox>
+
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="180" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Адрес регистрации:"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           Grid.Row="0"
+                                           Grid.ColumnSpan="2" />
+
+                                <TextBlock Text="Регион:"
+                                           Grid.Row="1"
+                                           Grid.Column="0"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="RegionTextxBox"
+                                         Grid.Column="1"
+                                         Grid.Row="1"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Пункт:"
+                                           Grid.Row="2"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="StationTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="2"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Улица:"
+                                           Grid.Row="3"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="StreetTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="3"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Дом:"
+                                           Grid.Row="4"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="HouseBox"
+                                         Grid.Column="1"
+                                         Grid.Row="4"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Корпус:"
+                                           Grid.Row="5"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="ComboBox"
+                                          Grid.Column="1"
+                                          Margin="10"
+                                          Grid.Row="5" />
+
+                                <TextBlock Text="Строение:"
+                                           Grid.Row="6"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="SctuctureTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="6"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Квартира:"
+                                           Grid.Row="7"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="ApartmentTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="7"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="180" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Адрес прописки:"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           Grid.Row="0"
+                                           Grid.ColumnSpan="2" />
+
+                                <TextBlock Text="Регион:"
+                                           Grid.Row="1"
+                                           Grid.Column="0"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="PermanentRegionTextxBox"
+                                         Grid.Column="1"
+                                         Grid.Row="1"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Пункт:"
+                                           Grid.Row="2"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="PermanentStationTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="2"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Улица:"
+                                           Grid.Row="3"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="PermanentStreetTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="3"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Дом:"
+                                           Grid.Row="4"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="PermanentHouseBox"
+                                         Grid.Column="1"
+                                         Grid.Row="4"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Корпус:"
+                                           Grid.Row="5"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="PermanentComboBox"
+                                          Grid.Column="1"
+                                          Margin="10"
+                                          Grid.Row="5" />
+
+                                <TextBlock Text="Строение:"
+                                           Grid.Row="6"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="PermanentSctuctureTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="6"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Квартира:"
+                                           Grid.Row="7"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="PermanentApartmentTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="7"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="180" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Паспортные данные:"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           Grid.Row="0"
+                                           Grid.ColumnSpan="2" />
+
+                                <TextBlock Text="Серия:"
+                                           Grid.Row="1"
+                                           Grid.Column="0"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="PassportSeriesTextxBox"
+                                         Grid.Column="1"
+                                         Grid.Row="1"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Номер:"
+                                           Grid.Row="2"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="PassportNumberTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="2"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Кем выдан:"
+                                           Grid.Row="3"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="PassportIssuedByTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="3"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Дата выдачи:"
+                                           Grid.Row="4"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="IssuedDateTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="4"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                                <TextBlock Text="Код подраздения:"
+                                           Grid.Row="5"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="PassportCodeTextBox"
+                                         Grid.Column="1"
+                                         Margin="10"
+                                         Grid.Row="5" />
+
+                                <TextBlock Text="Пол:"
+                                           Grid.Row="6"
+                                           Style="{StaticResource TitleUserInfoTextBlock}" />
+
+                                <TextBox x:Name="GenderTextBox"
+                                         Grid.Column="1"
+                                         Grid.Row="6"
+                                         Style="{StaticResource InputUserInfoTextBox}" />
+
+                            </Grid>
+
+                        </StackPanel>
+
+
 
                         <Button x:Name="RequestButton"
                                 Content="Создать"
@@ -620,289 +894,6 @@
                                 Margin="0 30 0 0"
                                 Style="{StaticResource DefaultButton}"
                                 Click="UpdateButton_Click" />
-
-                    </StackPanel>
-                </Border>
-            </Grid>
-        </Grid>
-
-        <Grid x:Name="CreateCaseGrid"
-              Background="#3F000000"
-              Visibility="Collapsed"
-              Grid.RowSpan="2">
-
-            <Grid Width="700"
-                  Height="510">
-
-                <Border Padding="40"
-                        Background="White"
-                        CornerRadius="30">
-
-                    <StackPanel>
-
-                        <Button Width="25"
-                                Height="25"
-                                Content="×"
-                                HorizontalAlignment="Right"
-                                Click="CloseCreateCaseClick" />
-
-                        <TextBlock Text="Заполните данные"
-                                   FontSize="18"
-                                   FontWeight="SemiBold"
-                                   HorizontalAlignment="Center" />
-
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition Width="3*" />
-                            </Grid.ColumnDefinitions>
-
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-
-                            <TextBlock Text="Название:"
-                                       Grid.Row="0"
-                                       Grid.Column="0"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
-
-                            <TextBox x:Name="CaseNameTextBox"
-                                     Grid.Column="1"
-                                     Grid.Row="0"
-                                     Style="{StaticResource InputUserInfoTextBox}" />
-
-                            <TextBlock Text="Том:"
-                                       Grid.Row="1"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
-
-                            <ComboBox x:Name="CaseVolumeComboBox"
-                                      Grid.Column="1"
-                                      Grid.Row="1"
-                                      FontSize="16"
-                                      SelectionChanged="CaseVolumeComboBox_SelectionChanged"
-                                      Margin="10,5,10,5" />
-
-                            <TextBlock Text="Акт:"
-                                       Grid.Row="2"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
-
-                            <ComboBox x:Name="CaseActComboBox"
-                                      Grid.Column="1"
-                                      Grid.Row="2"
-                                      FontSize="16"
-                                      Margin="10,5,10,5" />
-
-                            <TextBlock Text="Следователь:"
-                                       Grid.Row="3"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
-
-                            <ComboBox x:Name="InvestigatorComboBox"
-                                      Grid.Column="1"
-                                      Grid.Row="3"
-                                      FontSize="16"
-                                      Margin="10,5,10,5" />
-
-                            <TextBlock Text="Нарушитель:"
-                                       Grid.Row="4"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
-
-                            <TextBox x:Name="CaseIntruderTextBox"
-                                     Grid.Column="1"
-                                     Grid.Row="4"
-                                     Style="{StaticResource InputUserInfoTextBox}" />
-
-                            <TextBlock Text="Статья:"
-                                       Grid.Row="5"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
-
-                            <ComboBox x:Name="SectionComboBox"
-                                      Grid.Column="1"
-                                      Grid.Row="5"
-                                      FontSize="16"
-                                      Margin="10,5,10,5" />
-
-                            <TextBlock Text="Вещественные доказательства:"
-                                       Grid.Row="6"
-                                       Grid.Column="0"
-                                       TextWrapping="Wrap"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
-
-                            <TextBox x:Name="EvidenceTextBox"
-                                     Grid.Column="1"
-                                     Grid.Row="6"
-                                     Style="{StaticResource InputUserInfoTextBox}" />
-
-                        </Grid>
-
-                        <Button x:Name="CreateCaseConfirmButton"
-                                Content="Создать акт"
-                                Padding="15"
-                                Margin="0 30 0 0"
-                                Style="{StaticResource DefaultButton}"
-                                Click="CreateCaseConfirmButtonClick" />
-
-                        <Button x:Name="dUfpdateButton"
-                                Content="Обновить"
-                                Padding="15"
-                                Visibility="Collapsed"
-                                Margin="0 30 0 0"
-                                Style="{StaticResource DefaultButton}"
-                                Click="UpdateButton_Click" />
-
-                    </StackPanel>
-                </Border>
-            </Grid>
-        </Grid>
-
-        <Grid x:Name="CreateActGrid"
-              Background="#3F000000"
-              Visibility="Collapsed"
-              Grid.RowSpan="2">
-
-            <Grid Width="500"
-                  Height="300">
-
-                <Border Padding="40"
-                        Background="White"
-                        CornerRadius="30">
-
-                    <StackPanel>
-
-                        <Button Width="25"
-                                Height="25"
-                                Content="×"
-                                HorizontalAlignment="Right"
-                                Click="CloseCreateActClick" />
-
-                        <TextBlock Text="Заполните данные"
-                                   FontSize="18"
-                                   FontWeight="SemiBold"
-                                   HorizontalAlignment="Center" />
-
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition Width="3*" />
-                            </Grid.ColumnDefinitions>
-
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-
-                            <TextBlock Text="Название:"
-                                       Grid.Row="0"
-                                       Grid.Column="0"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
-
-                            <TextBox x:Name="ActNameTextBox"
-                                     Grid.Column="1"
-                                     Grid.Row="0"
-                                     Style="{StaticResource InputUserInfoTextBox}" />
-
-                            <TextBlock Text="Том:"
-                                       Grid.Row="1"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
-
-                            <ComboBox x:Name="VolumeComboBox"
-                                      Grid.Column="1"
-                                      Grid.Row="1"
-                                      Margin="10,0,0,0" />
-
-                        </Grid>
-
-                        <Button x:Name="CreateActConfirmButton"
-                                Content="Создать"
-                                Padding="15"
-                                Margin="0 30 0 0"
-                                Style="{StaticResource DefaultButton}"
-                                Click="CreateActConfirmButtonClick" />
-
-                        <Button x:Name="dUpdateButton"
-                                Content="Обновить"
-                                Padding="15"
-                                Visibility="Collapsed"
-                                Margin="0 30 0 0"
-                                Style="{StaticResource DefaultButton}"
-                                Click="UpdateButton_Click" />
-
-                    </StackPanel>
-                </Border>
-            </Grid>
-        </Grid>
-
-        <Grid x:Name="CreateVolumeGrid"
-              Background="#3F000000"
-              Visibility="Collapsed"
-              Grid.RowSpan="2">
-
-            <Grid Width="500"
-                  Height="300">
-
-                <Border Padding="40"
-                        Background="White"
-                        CornerRadius="30">
-
-                    <StackPanel>
-
-                        <Button Width="25"
-                                Height="25"
-                                Content="×"
-                                HorizontalAlignment="Right"
-                                Click="CloseCreateVolumeGridClick" />
-
-                        <TextBlock Text="Заполните данные"
-                                   FontSize="18"
-                                   FontWeight="SemiBold"
-                                   HorizontalAlignment="Center" />
-
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition Width="3*" />
-                            </Grid.ColumnDefinitions>
-
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-
-                            <TextBlock Text="Название:"
-                                       Grid.Row="0"
-                                       Grid.Column="0"
-                                       Style="{StaticResource TitleUserInfoTextBlock}" />
-
-                            <TextBox x:Name="VolumeNameTextBox"
-                                     Grid.Column="1"
-                                     Grid.Row="0"
-                                     Style="{StaticResource InputUserInfoTextBox}" />
-
-
-                        </Grid>
-
-                        <Button x:Name="CreateVolumeConfirmButton"
-                                Content="Создать"
-                                Padding="15"
-                                Margin="0 30 0 0"
-                                Style="{StaticResource DefaultButton}"
-                                Click="CreateVolumeConfirmButton_Click" />
-
-                        <Button x:Name="UpdateVolumeButton"
-                                Content="Обновить"
-                                Padding="15"
-                                Visibility="Collapsed"
-                                Margin="0 30 0 0"
-                                Style="{StaticResource DefaultButton}"
-                                Click="UpdateVolumeButtonClick" />
 
                     </StackPanel>
                 </Border>

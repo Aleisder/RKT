@@ -10,7 +10,7 @@
         Height="720"
         Width="600">
 
-    <Grid Background="#FF27295A">
+    <Grid Background="#FFCAE0FF">
 
         <Grid Width="300"
               Height="400">
@@ -21,7 +21,8 @@
 
                 <StackPanel>
 
-                    <Image Source="/Images/gerb-mvd.png" />
+                    <Image Source="/Images/mai.png"
+                           Height="150"/>
 
                     <TextBlock Text="Добро пожаловать!"
                                Style="{StaticResource TitleUserInfoTextBlock}"

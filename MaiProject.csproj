@@ -23,6 +23,7 @@
     <None Remove="Images\icon-question.png" />
     <None Remove="Images\icon-settings.png" />
     <None Remove="Images\icon.png" />
+    <None Remove="Images\mai.png" />
     <None Remove="Images\mvd.png" />
     <None Remove="Images\policeman.png" />
   </ItemGroup>
@@ -62,6 +63,7 @@
     <Resource Include="Images\icon-question.png" />
     <Resource Include="Images\icon-settings.png" />
     <Resource Include="Images\icon.png" />
+    <Resource Include="Images\mai.png" />
     <Resource Include="Images\mvd.png" />
     <Resource Include="Images\policeman.png" />
   </ItemGroup>
