@@ -22,10 +22,9 @@ namespace DemoExam
                 errorText.Visibility = Visibility.Visible;
             }
 
-            var user = userRepository.Validate(login, password);
-            if (user != null)
+            if (userRepository.Validate(login, password))
             {
-                UserScreen managerScreen = new(user.Id);
+                UserScreen managerScreen = new(userRepository.GetByLogin(login).Id);
                 managerScreen.Show();
                 Close();
             }

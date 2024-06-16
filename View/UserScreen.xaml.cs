@@ -26,7 +26,7 @@ namespace DemoExam.View
             UserListView.Visibility = Visibility.Collapsed;
 
             //UserListView.ItemsSource = userService.users;
-            ArchiveListView.ItemTemplate = (DataTemplate)this.Resources["VolumeListItem"];
+            //ArchiveListView.ItemTemplate = (DataTemplate)this.Resources["VolumeListItem"];
         }
 
         private void SetUpUserInfo()
@@ -203,27 +203,27 @@ namespace DemoExam.View
 
         private void CreateVolumeConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            string name = VolumeNameTextBox.Text;
-            CloseCreateVolumeDialog();
+            //string name = VolumeNameTextBox.Text;
+            //CloseCreateVolumeDialog();
         }
 
         private void CloseCreateVolumeDialog()
         {
-            VolumeNameTextBox.Clear();
-            CreateVolumeGrid.Visibility = Visibility.Collapsed;
+            //VolumeNameTextBox.Clear();
+            //CreateVolumeGrid.Visibility = Visibility.Collapsed;
         }
 
         private void CloseCreateVolumeGridClick(object sender, RoutedEventArgs e) => CloseCreateVolumeDialog();
 
         private void CreateVolumeButton_Click(object sender, RoutedEventArgs e)
         {
-            CreateVolumeGrid.Visibility = Visibility.Visible;
+            //CreateVolumeGrid.Visibility = Visibility.Visible;
         }
 
         private void CreateActButton_Click(object sender, RoutedEventArgs e)
         {
-            CreateActGrid.Visibility = Visibility.Visible;
-            LoadVolumeComboBoxItems();
+            //CreateActGrid.Visibility = Visibility.Visible;
+            //LoadVolumeComboBoxItems();
 
         }
 
@@ -244,16 +244,16 @@ namespace DemoExam.View
 
         private void CloseCreateAct()
         {
-            ActNameTextBox.Clear();
-            VolumeComboBox.Items.Clear();
-            CreateActGrid.Visibility = Visibility.Collapsed;
+            //ActNameTextBox.Clear();
+            //VolumeComboBox.Items.Clear();
+            //CreateActGrid.Visibility = Visibility.Collapsed;
         }
 
         private void CloseCreateCase()
         {
-            CreateCaseGrid.Visibility = Visibility.Collapsed;
-            CaseNameTextBox.Clear();
-            CaseIntruderTextBox.Clear();
+            //CreateCaseGrid.Visibility = Visibility.Collapsed;
+            //CaseNameTextBox.Clear();
+            //CaseIntruderTextBox.Clear();
 
         }
 

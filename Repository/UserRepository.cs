@@ -225,9 +225,8 @@ namespace MaiProject.Repository
             throw new NotImplementedException();
         }
 
-        public User Validate(string login, string password) =>
-            GetAll()
-            .Where(user => user.Login == login && user.Password == password)
-            .First();
+        public User GetByLogin(string login) => GetAll().Where(user => user.Login == login).First();
+
+        public bool Validate(string login, string password) => GetAll().Any(user => user.Login == login && user.Password == password);
     }
 }

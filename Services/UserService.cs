@@ -33,6 +33,5 @@ namespace DemoExam.Services
 
         public User GetById(int id) => userRepository.GetById(id);
 
-        public User Validate(string login, string password) => userRepository.Validate(login, password);
     }
 }
