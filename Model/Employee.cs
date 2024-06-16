@@ -8,8 +8,8 @@ namespace MaiProject.Model
         public string LastName { get; set; }                           // Фамилия
         public string FirstName { get; set; }                          // Имя
         public string MiddleName { get; set; }                         // Отчество
-        public RegistrationAddress Registration { get; set; }          // Адрес регистрации
-        public PermanentAddress Address { get; set; }                  // Адрес прописки
+        public Registration Registration { get; set; }          // Адрес регистрации
+        public Address Address { get; set; }                  // Адрес прописки
         public Position Position { get; set; }                         // Должность
         public string Snils { get; set; }                              // Снилс
         public string INN { get; set; }                                // ИНН
@@ -27,7 +27,7 @@ namespace MaiProject.Model
         public string MedicalCardNumber { get; set; }                  // Номер мед книжки
         public PaymentAccount PaymentAccount { get; set; }             // Расчетный счет
 
-        public Employee(int id, string lastName, string firstName, string middleName, RegistrationAddress registration, PermanentAddress address, Position position, string snils, string iNN, DateOnly dateOfBirth, string phone, Citizenship citizenship, ForeignLanguage foreignLanguage, Education education, string familyStatus, string email, Passport passport, string employmentHistorySeries, string employmentHistoryNumber, MilitaryRegistration militaryRegistration, string medicalCardNumber, PaymentAccount paymentAccount)
+        public Employee(int id, string lastName, string firstName, string middleName, Registration registration, Address address, Position position, string snils, string iNN, DateOnly dateOfBirth, string phone, Citizenship citizenship, ForeignLanguage foreignLanguage, Education education, string familyStatus, string email, Passport passport, string employmentHistorySeries, string employmentHistoryNumber, MilitaryRegistration militaryRegistration, string medicalCardNumber, PaymentAccount paymentAccount)
         {
             Id = id;
             LastName = lastName;

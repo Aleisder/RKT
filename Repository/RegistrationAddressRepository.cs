@@ -4,29 +4,29 @@ using System.Collections.Generic;
 
 namespace MaiProject.Repository
 {
-    public class RegistrationAddressRepository : Repository<RegistrationAddress>
+    public class RegistrationAddressRepository : Repository<Registration>
     {
-        public override int Add(RegistrationAddress item)
+        public override int Add(Registration item)
         {
             throw new System.NotImplementedException();
         }
 
-        public override void Delete(RegistrationAddress item)
+        public override void Delete(Registration item)
         {
             throw new System.NotImplementedException();
         }
 
-        public override List<RegistrationAddress> GetAll()
+        public override List<Registration> GetAll()
         {
             throw new System.NotImplementedException();
         }
 
-        public override RegistrationAddress GetById(int id)
+        public override Registration GetById(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public override int Update(RegistrationAddress item)
+        public override int Update(Registration item)
         {
             throw new System.NotImplementedException();
         }

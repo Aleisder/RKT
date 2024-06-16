@@ -1,6 +1,6 @@
 ﻿namespace MaiProject.Model
 {
-    public class PermanentAddress
+    public class Address
     {
         public int Id { get; set; }
         public Region Region { get; set; }    // Регион
@@ -10,7 +10,7 @@
         public string Housing { get; set; }   // Корпус
         public string Apartment { get; set; } // Квартира
 
-        public PermanentAddress(int id, Region region, string station, string street, string building, string housing, string apartment)
+        public Address(int id, Region region, string station, string street, string building, string housing, string apartment)
         {
             Id = id;
             Region = region;
