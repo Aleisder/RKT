@@ -9,19 +9,14 @@ namespace DemoExam.View
     public partial class UserScreen : Window
     {
         private readonly UserService userService;
-        private readonly User CurrentUser;
 
         public UserScreen(int userId)
         {
             InitializeComponent();
             userService = new();
-            CurrentUser = userService.GetById(userId);
 
             UserDataGrid.ItemsSource = userService.users;
             UserListView.Visibility = Visibility.Collapsed;
-
-            //UserListView.ItemsSource = userService.users;
-            //ArchiveListView.ItemTemplate = (DataTemplate)this.Resources["VolumeListItem"];
         }
 
         private void OpenAddUserWindowClick(object sender, RoutedEventArgs e) => OpenAddUserWindow();
@@ -53,8 +48,6 @@ namespace DemoExam.View
         private void ConfirmUserClick(object sender, RoutedEventArgs e)
         {
             var role = (Position)RoleComboBox.SelectedItem;
-
-           
 
             //userService.Add(user);
             CloseAddUserWindow();
